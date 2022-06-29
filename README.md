@@ -30,4 +30,4 @@ databases, network -->
 
 - [C++ Series](docs/cherno-cpp.md) by [The Cherno](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
 
-- [Leetcode Solutions](docs/leetcode.md)
+- [Leetcode Solutions](docs/leetcode/)
