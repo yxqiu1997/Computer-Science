@@ -373,5 +373,45 @@ public:
 
 虚函数代价：
 
-	1. 需要额外内存才能将信息存储在虚函数表中，以便我们可以分派到正确的函数。该函数包含实际基类中指向虚函数表的成员指针；
+	1. 需要额外内存才能将信息存储在虚函数表中，以便我们可以分派到正确的函数。该函数包含实际基类中指向虚函数表的成员指针
 	1. 每次我们调用虚函数，都需要遍历虚函数表以查看映射哪个函数
+
+
+
+## 29 Interfaces in C++
+
+```cpp
+class Entity {
+public:
+  	virtual std::string GetName() = 0;
+};
+```
+
+
+
+## 32 How Strings Work in C++
+
+```CPP
+#include <iostream>
+#include <string>
+
+// string复制很慢，所以要用const、reference
+void PrintString(const std::string& string) {
+  	std::cout << name << std::endl;
+}
+
+int main() {
+  	std::string name = std::string("Cherno") + " hello!";  // 不能直接相加，要调用一下std::string的构造器
+  	bool contains = name.find("no") != std::string::npos;  //  npos相当于-1
+  	std::cout << name << std::endl;
+  
+  	std::cin.get();
+}
+```
+
+
+
+
+
+
+
