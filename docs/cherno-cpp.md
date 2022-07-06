@@ -491,6 +491,98 @@ void PrintEntity(const Entity& e) {
 
 
 
+## 35 The Mutable Keyword in C++
+
+```cpp
+int x = 8;
+auto f = [=]() mutable {
+  	x++;  // 不加mutable的话，不能修改x的值
+  	std::cout << x << std::endl;
+}；
+
+f(); // 此时x = 8，因为是传值[=]，不是传引用[&]
+```
+
+
+
+## 36 Member Initialiser Lists in C++
+
+初始化列表比构造函数先执行：
+
+- 构造函数等对象生成完之后才执行
+- 初始化列表在对象生成时就进行了
+
+不使用初始化列表会影响性能，所以一定要用它
+
+
+
+## 38 How to CREATE INSTANTIATE OBJECTS in C++
+
+```cpp
+#include <iostream>
+#include <string>
+
+using String = std::string;
+
+class Entity {
+private:
+  	String m_Name;
+public:
+  	Entity() : m_Name("Unknown") {}
+  	Entity(const String& name) : m_Name(name) {}
+  
+  	const String& GetName() const { return m_Name; }
+};
+
+// Stack Allocation
+int main() {
+  	Entity entity;  // 自动调用默认的构造函数（已经初始化好了，不像Java）
+  	Entity entity("Cherno");  // 能用这两种尽量用，最快
+  
+  	std::cin.get();
+}
+
+// Heap Allocation，在对象很大的时候使用
+// 对象不会因为函数结束而被释放，需要手动free
+int main() {
+  	Entity* e;
+  	{
+      	Entity* entity = new Entity("Cherno");
+      	e = entity;
+      	std::cout << (*entity).GetName() << std::endl; // 或者
+      	std::cout << entity)->GetName() << std::endl;
+    }
+  
+  	std::cin.get();
+  	delete e;
+}
+```
+
+
+
+## 39 The NEW Keyword in C++
+
+```cpp
+Entity* e = new Entity();  // 分配内存 + 调用构造函数
+Entity* e = (Entity*)malloc(sizeof(Entity));  // 仅分配内存，最好不要这样用
+
+delete e;
+```
+
+```cpp
+// delete[]会逐个调用所有元素的destructor
+int* b = new int[50];  // 200 bytes
+delete[] b;
+```
+
+
+
+
+
+
+
+
+
 
 
 
