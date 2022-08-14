@@ -24,6 +24,8 @@ databases, network -->
 
 - [Dive Into Deep Learning](https://github.com/yxqiu1997/d2l-pytorch)
 
+- [UCB Data 100: Principles and Techniques of Data Science](https://github.com/yxqiu1997/ucb-ds100)
+
 ## Documents
 
 - [Essential C++](docs/essential-cpp/) by *Stanley B. Lippman*
