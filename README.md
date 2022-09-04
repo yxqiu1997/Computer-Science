@@ -12,6 +12,8 @@
 
 - [Princeton: Algorithms](https://github.com/yxqiu1997/princeton-algorithms) - Coursera
 
+- [UCB CS 61B: Data Structures](https://github.com/yxqiu1997/ucb-cs61b) - Spring 2021
+
 ## Computer Systems
 
 - [CMU 15-213: Intro to Computer Systems](https://github.com/yxqiu1997/cmu-csapp) - Fall 2015
