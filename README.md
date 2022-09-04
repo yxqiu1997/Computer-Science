@@ -26,10 +26,10 @@ databases, network -->
 
 - [UCB Data 100: Principles and Techniques of Data Science](https://github.com/yxqiu1997/ucb-ds100)
 
-## Documents
+<!-- ## Documents
 
 - [Essential C++](docs/essential-cpp/) by *Stanley B. Lippman*
 
 - [C++ Series](docs/cherno-cpp.md) by [The Cherno](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
 
-- [Leetcode Solutions](docs/leetcode/)
+- [Leetcode Solutions](docs/leetcode/) -->
