@@ -1,40 +1,6 @@
-## 基本语法
+### Streams
 
-### 1.  Optional
-
-"Hey I might not have a value here, so you have to be prepared to handler that situation.”
-
-Optional are really intended to **only be used as a return type**, where without optional, your method has the possibility on returning null.
-
-```java
-private static Optional<Cat> findCatByName(String name) {
-    Cat cat = new Cat(name, 3);
-    return Optional.ofNullable(cat);
-}
-
-private static Optional<Cat> findCatByName(String name) {
-    Cat cat = new Cat(name, 3);
-    return Optional.empty();
-}
-```
-
-```java
-public static void main(String[] args) {
-    Optional<Cat> optionalCat = findCatByName("Fred");
-    
-    optionalCat.get(); // return the value that insides the optional
-    // optional里为空时，get()会NoSuchElementException
-    optionalCat.isPresent();
-    optionalCat.orElse(new Cat("UNKNOWN", 0)); // 括号里是empty时的default
-    optionalCat.orElseGet(); // 括号里是supplier，lambda表达式
-    optionalCat.orElseThrow(); // get()的替代
-
-    optionalCat.map(Cat::getAge) // take cat optional and transform into an optional of another type
-        .orElse(0); 
-}
-```
-
-### 2. Streams
+#### 1. 定义
 
 ```java
 List<Person> people = getPeople();
@@ -117,5 +83,17 @@ Optional<String> oldestFemaleAge = people.stream()
 oldestFemaleAge.ifPresent(System.out::println);
 ```
 
+#### 2. Demo in UCB CS 61B Project 0
 
+```java
+private static Coordinate[] getAdjacentCoordinates(Tile tile, int size) {
+  Coordinate[] coordinates = Coordinate.of(new int[][] {
+    {tile.col() - 1, tile.row()}, {tile.col() + 1, tile.row()},
+    {tile.col(), tile.row() - 1}, {tile.col(), tile.row() + 1}
+  });
+  return Arrays.stream(coordinates).filter(coordinate ->
+    coordinate.col >= 0 && coordinate.col < size
+      && coordinate.row >= 0 && coordinate.row < size).toArray(Coordinate[]::new);
+}
+```
 
